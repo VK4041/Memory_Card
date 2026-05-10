@@ -1,2 +1,1 @@
-# Memory_Card
-Memory card game using React useEffect and useState hooks.
+Memory Card project using react's useState and useEffect hooks.
