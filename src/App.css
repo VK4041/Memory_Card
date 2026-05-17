@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
 @import "tailwindcss";
+
 body,
 html {
   padding: 0;
   margin: 0;
   min-height: 100vh;
+  background-image: url("../public/images/image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #root {
@@ -15,25 +20,42 @@ html {
 }
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   flex: 1;
-  width: 100%;
-  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+.title {
+  text-align: center;
+  font-family: "Metal Mania", system-ui;
+  font-weight: 900;
+  font-size: 3rem;
+  font-style: normal;
+  color: rgb(255, 166, 0);
+  --shadow-outline: black;
+  text-shadow:
+    -1px -1px 0 var(--shadow-outline),
+    1px -1px 0 var(--shadow-outline),
+    -1px 1px 0 var(--shadow-outline),
+    1px 1px 0 var(--shadow-outline);
 }
 .gameboard {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 200px));
+  /* grid-template-columns: repeat(auto-fit, minmax(150px, 250px)); */
+  grid-template-columns: repeat(4, minmax(150px, 250px));
   gap: 1.5rem;
   width: 100%;
   justify-content: center;
+  align-items: stretch;
+  padding: 2rem;
 }
 .card {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 12px;
   border: 3px solid rgba(255, 255, 255, 0.2);
-  background-color: #3f4a5b;
+  background-color: #5a2626;
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
@@ -47,7 +69,7 @@ html {
 }
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: white;
 }
 .card-img {
   width: 100%;
@@ -61,4 +83,21 @@ html {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
+}
+.scoreboard {
+  position: absolute;
+  background-image: url("../public/images/scouter.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -10px;
+  right: 0;
+  transform: translateX(40%);
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+}
+.score {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  transform: translate(35%, 170%);
 }

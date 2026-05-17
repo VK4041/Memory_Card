@@ -8,10 +8,10 @@ export default function Card({ image, clickHandler, parentClicked }) {
                 className='card-img'
                 src={image.image}
                 alt={image.alt}
-                onClick={() => {
-                    clickHandler(shuffle, setShuffle)
-                    clickHandler(clicked, setClicked)
-                }}
+                // onClick={() => {
+                //     clickHandler(shuffle, setShuffle)
+                //     clickHandler(clicked, setClicked)
+                // }}
             />
             <p className='card-name'>{image.name}</p>
         </div>

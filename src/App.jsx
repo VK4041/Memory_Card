@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Gameboard from './Gameboard.jsx'
+import Scoreboard from './Scoreboard.jsx'
+
 export default function App() {
   const [images, setImages] = useState([]);
   function getRandomPage() {
@@ -17,9 +19,10 @@ export default function App() {
   }, [])
   return (
     <div className='container'>
+      <h1 className='title'>Dragon Ball Memory Game</h1>
+      <Scoreboard />
       <Gameboard images={images} />
     </div>
-
   );
 
 }
