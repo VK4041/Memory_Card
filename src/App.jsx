@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Gameboard from './Gameboard.jsx'
-import Scoreboard from './Scoreboard.jsx'
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -9,10 +8,9 @@ export default function App() {
   }
   useEffect(() => {
     async function fetchPhotos() {
-      const data = await fetch(`https://dragonball-api.com/api/characters?page=${getRandomPage()}&limit=8`,
+      const data = await fetch(`https://dragonball-api.com/api/characters?page=${getRandomPage()}&limit=16`,
       );
       const result = await data.json();
-      console.log(result.items)
       setImages(result.items);
     }
     fetchPhotos()
@@ -20,7 +18,6 @@ export default function App() {
   return (
     <div className='container'>
       <h1 className='title'>Dragon Ball Memory Game</h1>
-      <Scoreboard />
       <Gameboard images={images} />
     </div>
   );

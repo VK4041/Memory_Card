@@ -1,17 +1,12 @@
-import { useState } from 'react';
-export default function Card({ image, clickHandler, parentClicked }) {
-    const [shuffle, setShuffle] = parentClicked;
-    const [clicked, setClicked] = useState(false);
+export default function Card({ image, clickHandler }) {
     return (
-        <div className='card'>
+        <div className='card' onClick={() => {
+            clickHandler(image.id)
+        }}>
             <img
                 className='card-img'
                 src={image.image}
                 alt={image.alt}
-                // onClick={() => {
-                //     clickHandler(shuffle, setShuffle)
-                //     clickHandler(clicked, setClicked)
-                // }}
             />
             <p className='card-name'>{image.name}</p>
         </div>
