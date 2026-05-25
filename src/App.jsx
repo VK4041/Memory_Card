@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Gameboard from './Gameboard.jsx'
-
+import './App.css'
 export default function App() {
   const [images, setImages] = useState([]);
   function getRandomPage() {
